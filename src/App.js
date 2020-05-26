@@ -1,10 +1,10 @@
 import React from 'react'
-import CounterApp from './components/CounterApp/CounterApp'
+import Header from './components/shared/Header';
 
 function App(){
     return(
     <div>
-         <CounterApp />
+         <Header/>
     </div>
     )
   }
