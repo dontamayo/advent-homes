@@ -1,12 +1,12 @@
 import React from "react";
-
-/* eslint-disable jsx-a11y/anchor-is-valid */ 
+import { Link } from 'react-router-dom'
+// /* eslint-disable jsx-a11y/anchor-is-valid */ 
 const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a className="navbar-brand" href="/">
+      <Link className="navbar-brand" to="/">
         AdventHomes
-      </a>
+      </Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -33,14 +33,14 @@ const Header = () => {
         </form>
         <ul className="navbar-nav ml-auto">
           <li className="nav-item active">
-            <a className="nav-link" href="/">
+            <Link className="nav-link" to="/">
               Home <span className="sr-only">(current)</span>
-            </a>
+            </Link>
           </li>
           <li className="nav-item dropdown">
-            <a
+            <Link
               className="nav-link dropdown-toggle"
-              href="#"
+              to="#"
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -48,29 +48,29 @@ const Header = () => {
               aria-expanded="false"
             >
               Manage
-            </a>
+            </Link>
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a className="dropdown-item" href="#">
+              <Link className="dropdown-item" to="#">
                 Action
-              </a>
-              <a className="dropdown-item" href="#">
+              </Link>
+              <Link className="dropdown-item" to="#">
                 Another action
-              </a>
+              </Link>
               <div className="dropdown-divider"></div>
-              <a className="dropdown-item" href="#">
+              <Link className="dropdown-item" to="#">
                 Something else here
-              </a>
+              </Link>
             </div>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/login">
+            <Link className="nav-link" to="/login">
               Login
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="register">
+            <Link className="nav-link" to="/register">
               Register
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
