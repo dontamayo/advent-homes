@@ -1,14 +1,20 @@
 import React from 'react';
 import connect from '../store/connect';
+// import mapStateToProps from './RentalHome';
 
 
 class Login extends React.Component{
     render(){
-        const {rentals} = this.props;
+        const {data} = this.props;
         return(
-        <p>{JSON.stringify(rentals())}</p>
+        <p>{JSON.stringify(data())}</p>
         )
     }
 }
+const mapStateToProps =(state) => {
+    return{
+        data: state.data2
+    }
+}
 
-export default connect(Login);
+export default connect(mapStateToProps)(Login);

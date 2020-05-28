@@ -2,17 +2,18 @@ import React from 'react';
 import { StateContext } from "../state-context";
 
 
-const connect = (Component)=> {
-    class Connect extends React.Component{
-
-       
-        render(){
-            return <Component {...this.context}></Component>  
+const connect = selectState => Component => {
+        class Connect extends React.Component{
+           
+            render(){
+                
+                const slice = selectState(this.context)
+                return <Component {...slice}></Component>  
+            }
         }
+        Connect.contextType = StateContext;
+        return Connect;
     }
-    Connect.contextType = StateContext;
-    return Connect;
 
-}
 
 export default connect;
