@@ -3,20 +3,20 @@ import Header from './components/shared/Header';
 import Routes from './components/Routes';
 
 import { BrowserRouter as Router } from 'react-router-dom';
-import { StateContext } from './state-context'
+import Provider from './store/Provider'
 
-import store from './store';
+import { initStore } from './store/';
+// import { initStore } from './store/index';
 
-
-
+const store = initStore();
 const App = () =>{
     return(
-      <StateContext.Provider value={store}>
+      <Provider store={store}>
        <Router>
         <Header/>
         <Routes/>
       </Router> 
-      </StateContext.Provider>
+      </Provider>
     )
   }
 
